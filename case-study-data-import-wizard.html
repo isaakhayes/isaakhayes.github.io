@@ -516,89 +516,169 @@
     .image-container.real img{border-radius:12px}
     .try-frame{border-radius:12px}
     @media(max-width:700px){.snapshot{grid-template-columns:1fr}.snapshot>div,.snapshot>div+div{padding:1.1rem 0 1.2rem;border-left:0;border-top:1px solid rgba(0,0,0,.14)}.snapshot>div:first-child{border-top:0}.present-btn{padding:.5rem .9rem}}
-  </style>
-<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230f1729' stroke='%23c4603a' stroke-width='4'/%3E%3Cpath d='M12 64c2-12 12-16 20-16s18 4 20 16z' fill='%23efece6'/%3E%3Cellipse cx='32' cy='29' rx='11.5' ry='15' fill='%237a4a32'/%3E%3Cpath d='M20.5 30c0 11 5 18 11.5 18s11.5-7 11.5-18c-2 5-4 6-7 6-2-2-7-2-9 0-3 0-6-1-7-6z' fill='%231b1411'/%3E%3Crect x='20.5' y='24' width='10' height='7' rx='3' fill='none' stroke='%2315110f' stroke-width='2.4'/%3E%3Crect x='33.5' y='24' width='10' height='7' rx='3' fill='none' stroke='%2315110f' stroke-width='2.4'/%3E%3C/svg%3E" rel="icon"/><meta content="#0f1729" name="theme-color"/><meta content="https://isaakhayes.github.io/assets/images/og-image.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/></head>
+  .covers{margin:1.1rem 0 0;font-size:.98rem;line-height:1.5}.covers .meta-label{display:block;margin-bottom:.2rem}.guardrails{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.guardrails li{border:1px solid rgba(15,23,41,.14);border-radius:12px;padding:.9rem 1rem;font-weight:600;line-height:1.35}.cs-figure{margin:1.6rem 0 0}.cs-figure img{width:100%;display:block;border-radius:14px;box-shadow:0 24px 60px rgba(15,23,41,.22)}.cs-figure figcaption{margin-top:.7rem;font-size:.88rem;opacity:.75}@media(max-width:640px){.guardrails{grid-template-columns:1fr}}.js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.js .rv.visible{opacity:1;transform:none}#present .rv{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:smooth}section[id]{scroll-margin-top:84px}.glance{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1.4rem;margin:2rem 0}.glance-card{border:1px solid rgba(15,23,41,.12);border-radius:16px;padding:1.4rem 1.5rem;background:#fff}.glance dl{margin:.8rem 0 0}.glance dl>div{padding:.75rem 0;border-top:1px solid rgba(15,23,41,.1)}.glance dl>div:first-child{border-top:0}.glance dt{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#a84f2f}.glance dd{margin:.25rem 0 0;line-height:1.5}.glance-nav{display:flex;flex-direction:column;padding:1.1rem .4rem}.glance-nav .meta-label{margin-bottom:.5rem}.glance-nav a{text-decoration:none;color:inherit;padding:.5rem .1rem;border-bottom:1px solid rgba(15,23,41,.1);font-weight:600}.glance-nav a:hover{color:#a84f2f}.isaak-foot{width:96px;margin:0 auto 1.1rem}.isaak-foot svg{width:100%;height:auto;display:block}@media(max-width:760px){.glance{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}.hero2{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-areas:"text art" "meta art";gap:1.4rem 2.4rem;align-items:center}.hero2 .hero-text{grid-area:text}.hero2 .hero-art{grid-area:art}.hero2 .hero-meta{grid-area:meta;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 1.6rem}.hero2 .subtitle{margin-bottom:1.4rem}.hero-art img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 24px 60px rgba(15,23,41,.22)}.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin-top:1.4rem}.shot{margin:0}.shot img{width:100%;height:auto;display:block;border-radius:12px;box-shadow:0 18px 44px rgba(15,23,41,.2)}.shot figcaption{margin-top:.7rem;line-height:1.45}.shot figcaption strong{display:block}.ask{list-style:none;padding:0;margin:1.2rem 0 0}.ask li{padding:.9rem 0;border-top:1px solid rgba(15,23,41,.14);font-weight:600;font-size:1.05rem}.ask li:last-child{border-bottom:1px solid rgba(15,23,41,.14)}.try-phone{display:none;margin-top:1rem}@media(max-width:760px){.hero2{grid-template-columns:1fr;grid-template-areas:"text" "art" "meta"}.shots{grid-template-columns:1fr}.try-phone{display:inline-block}#try .try-frame{display:none}.hero-art{margin:.4rem 0}}</style>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230f1729' stroke='%23c4603a' stroke-width='4'/%3E%3Cpath d='M12 64c2-12 12-16 20-16s18 4 20 16z' fill='%23efece6'/%3E%3Cellipse cx='32' cy='29' rx='11.5' ry='15' fill='%237a4a32'/%3E%3Cpath d='M20.5 30c0 11 5 18 11.5 18s11.5-7 11.5-18c-2 5-4 6-7 6-2-2-7-2-9 0-3 0-6-1-7-6z' fill='%231b1411'/%3E%3Crect x='20.5' y='24' width='10' height='7' rx='3' fill='none' stroke='%2315110f' stroke-width='2.4'/%3E%3Crect x='33.5' y='24' width='10' height='7' rx='3' fill='none' stroke='%2315110f' stroke-width='2.4'/%3E%3C/svg%3E" rel="icon"/><meta content="#0f1729" name="theme-color"/><meta content="https://isaakhayes.github.io/assets/images/og-image.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><script>document.documentElement.className+=' js'</script></head>
 <body>
 <header><a href="index.html">← Back to Portfolio</a><button id="presentBtn" class="present-btn" type="button" aria-label="Present this case study as slides">Present ▸</button></header>
 <div class="container">
-<section class="hero"><h1>Simplifying Salesforce's Most Critical Workflow</h1><p class="subtitle">A 6-week redesign that replaced five import tools with one trusted, step-by-step wizard. Salesforce piloted it in 2013 and released it to every customer in 2014, and competitors copied the flow.</p><div class="hero-meta"><div class="meta-item"><span class="meta-label">Role</span><span>Sr. UX Designer</span></div><div class="meta-item"><span class="meta-label">Company</span><span>Salesforce</span></div><div class="meta-item"><span class="meta-label">Team</span><span>Prototyper, UX researcher, copywriter</span></div><div class="meta-item"><span class="meta-label">Timeline</span><span>6 weeks</span></div></div></section>
-<div class="metrics"><div class="metric"><div class="metric-number">5 → 1</div><div class="metric-label">Import tools replaced: 2 built by Salesforce, 3 by customers on the AppExchange</div></div><div class="metric"><div class="metric-number">8 → 4</div><div class="metric-label">Steps in the import flow, from the Setup tree to the wizard</div></div><div class="metric"><div class="metric-number">7</div><div class="metric-label">User roles in usability testing</div></div></div>
-<div class="image-container real hero-visual"><img src="assets/images/diw-hero.webp" alt="Salesforce Data Import Wizard: the field mapping step, redesigned" width="1800" height="1125" fetchpriority="high"></div>
-<div class="snapshot"><div><h4>I owned</h4><p>The end-to-end UX of the import: the path, the interaction model and the copy.</p></div><div><h4>Team and scope</h4><p>A prototyper, a UX researcher and a copywriter, over six weeks.</p></div><div><h4>The call I made</h4><p>One product, not two: a standard flow for 80% of users, with bulk available for the rest.</p></div></div>
-<section>
-<div class="section-header"><span class="section-eyebrow">The Situation</span>
+<section class="hero hero2">
+<div class="hero-text"><h1>Data Import Wizard</h1><p class="subtitle">Simplifying Salesforce's most critical workflow.</p><a class="cta-button" href="https://isaakhayes.github.io/data-import-wizard/" target="_blank" rel="noopener">See the prototype &#8599;</a></div>
+<div class="hero-art"><img src="assets/images/card-diw.webp" alt="The Data Import Wizard as shipped at Salesforce, next to the AI-forward concept" width="1200" height="675" fetchpriority="high"/></div>
+<div class="hero-meta"><div class="meta-item"><span class="meta-label">Role</span><span>Sr. UX Designer</span></div><div class="meta-item"><span class="meta-label">Company</span><span>Salesforce</span></div><div class="meta-item"><span class="meta-label">Team</span><span>Researcher, two junior designers, one developer</span></div><div class="meta-item"><span class="meta-label">Timeline</span><span>6 weeks of design, about 3 months to delivery</span></div></div>
+</section>
+<section class="glance rv" id="glance" aria-label="At a glance">
+<div class="glance-card"><span class="section-eyebrow">At a glance</span>
+<dl>
+<div><dt>The problem</dt><dd>Salesforce had two import tools, customers had added three more, and admins couldn't find or trust any of them.</dd></div>
+<div><dt>I owned</dt><dd>The end-to-end UX of the import: the path, the interaction model and the copy.</dd></div>
+<div><dt>What I did</dt><dd>One wizard with one name and one place to start, and a preview and clean-up step before anything is saved.</dd></div>
+<div><dt>What happened</dt><dd>Piloted in 2013 and released to every customer in 2014. Big imports now run in the background in batches. Competitors copied the flow.</dd></div>
+<div><dt>What it covers</dt><dd>Working with a developer who had never worked with a designer, progressive disclosure under pressure, and an AI-forward redesign.</dd></div>
+</dl></div>
+<nav class="glance-nav" aria-label="On this page"><span class="meta-label">On this page</span><a href="#situation">The Situation</a><a href="#bet">The Bet</a><a href="#how-i-worked">How I Worked</a><a href="#craft">Craft Decisions</a><a href="#results">Results</a><a href="#ai">Then and Now: AI</a><a href="#try">Try It</a></nav>
+</section>
+
+<div class="metrics"><div class="metric rv" data-delay="0"><div class="metric-number">5 → 1</div><div class="metric-label">Import tools replaced: 2 built by Salesforce, 3 by customers on the AppExchange</div></div><div class="metric rv" data-delay="120"><div class="metric-number">8 → 4</div><div class="metric-label">Steps in the import flow, from the Setup tree to the wizard</div></div><div class="metric rv" data-delay="240"><div class="metric-number">7</div><div class="metric-label">User roles in usability testing</div></div></div>
+<section id="screens"><div class="section-header rv" data-delay="0"><span class="section-eyebrow">Key Screens</span><h2>Four Screens, Four Decisions.</h2></div><div class="shots"><figure class="shot rv" data-delay="0"><img src="assets/images/diw-hero.webp" alt="The field mapping step with a preview of the first record" loading="lazy"/><figcaption><strong>Match your fields</strong>A live preview of your first record, so you see what you are about to import.</figcaption></figure><figure class="shot rv" data-delay="90"><img src="assets/images/diw-flow.webp" alt="The three steps of the wizard: upload, edit field mapping, start import" loading="lazy"/><figcaption><strong>Three steps, one path</strong>Upload, edit field mapping, start import.</figcaption></figure><figure class="shot rv" data-delay="180"><img src="assets/images/diw-stepper.webp" alt="The progress bar with small encouragements along the way" loading="lazy"/><figcaption><strong>Progress that talks back</strong>Let's do this. Good job. Almost done.</figcaption></figure><figure class="shot rv" data-delay="270"><img src="assets/images/diw-success.webp" alt="The Import Complete screen showing records imported, skipped and errors" loading="lazy"/><figcaption><strong>Done, and you know what happened</strong>Records imported, skipped as duplicates, and errors.</figcaption></figure></div></section>
+
+
+<section id="situation">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">The Situation</span>
 <h2>Two Tools, Neither Fully Functional</h2></div>
-<div class="content-block">
+<div class="content-block rv" data-delay="0">
 <h3>What I Inherited</h3>
-<p>Salesforce had two import tools of its own, built at different times by separate product teams with completely inconsistent style guides and locations, and customers had filled the gap with three more import apps on the AppExchange, the Salesforce marketplace. Neither of Salesforce's own tools was fully functional. Admins had no idea where to go, what files to prep, or why bad data kept breaking production schemas. Years of bad imports had compounded into a systemic platform trust problem.</p>
+<p>Two import tools from two different teams, with different styles and different homes. Customers had added three more on the AppExchange, the Salesforce marketplace. Admins didn't know where to go or what to prep, and bad data kept breaking things. It had been piling up for years.</p>
 </div>
-<div class="content-block">
+<div class="content-block rv" data-delay="90">
 <h3>How I Found the Problem</h3>
-<p>I benchmarked 15+ competing import tools, including Oracle, Microsoft Dynamics CRM, Podio, SugarCRM and Informatica. I mined Salesforce's public Idea Exchange for the fixes people wanted most, with requests drawing up to 540 community points: saved field maps, multi-line street address mapping and default values. And I mapped the existing flow: eight steps scattered across the Setup tree.</p>
+<p>I looked at 15+ competing import tools, including Oracle, Microsoft Dynamics CRM, Podio, SugarCRM and Informatica. I read Salesforce's public Idea Exchange for the fixes people wanted most, with requests drawing up to 540 community points: saved field maps, multi-line street address mapping and default values. And I mapped the flow we had: eight steps scattered across the Setup tree.</p>
 </div>
-<div class="content-block">
+<div class="content-block rv" data-delay="180">
 <h3>The Opportunity</h3>
-<p>These were not two small problems. They were one trust problem. The instructions were inconsistent, the mapping fields were unknown, and nothing validated the data before it was committed to the CRM. One trusted flow could fix all of it at once.</p>
+<p>It wasn't two small problems. It was one trust problem. The instructions were inconsistent, nobody knew the mapping fields, and nothing checked the data before it went into the CRM. One trusted flow could fix all of it.</p>
 </div>
 </section>
-<section>
-<div class="section-header"><span class="section-eyebrow">The Bet</span>
+<section id="bet">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">The Bet</span>
 <h2>One Location. One Name. One Entry Point.</h2></div>
-<div class="content-block">
-<p>The first decision was the simplest and the hardest: one location, one name and one entry point, so the import was finally discoverable. Everything after that served one idea: guide the admin down a single clear path, and never let dirty data reach production.</p>
+<div class="content-block rv" data-delay="0">
+<p>The first call was the simplest and the hardest: one location, one name, one entry point, so import was finally easy to find. After that, everything served one idea. Guide the admin down one clear path, and never let dirty data reach production.</p>
 </div>
 </section>
-<section>
-<div class="section-header"><span class="section-eyebrow">The Path I Designed</span>
+<section id="path">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">The Path I Designed</span>
 <h2>Six Phases, One Clear Path</h2></div>
 <div class="timeline"><div class="timeline-item"><div class="timeline-label">Phase 1</div><div class="timeline-title">Overview</div><div class="timeline-description">Orient the user, set expectations and explain what they need before they start.</div></div><div class="timeline-item"><div class="timeline-label">Phase 2</div><div class="timeline-title">File prep</div><div class="timeline-description">Guide them through getting their CSV ready before upload.</div></div><div class="timeline-item"><div class="timeline-label">Phase 3</div><div class="timeline-title">Upload</div><div class="timeline-description">Drag and drop, with clear file type guidance.</div></div><div class="timeline-item"><div class="timeline-label">Phase 4</div><div class="timeline-title">Data display</div><div class="timeline-description">A full table view of their data inside the system.</div></div><div class="timeline-item"><div class="timeline-label">Phase 5</div><div class="timeline-title">Clean</div><div class="timeline-description">Suggestions to fix dirty data before it goes live.</div></div><div class="timeline-item"><div class="timeline-label">Phase 6</div><div class="timeline-title">Confirm</div><div class="timeline-description">The data is in Salesforce, ready to use.</div></div></div>
-<div class="image-container real"><img src="assets/images/diw-flow.webp" alt="Three steps of the redesigned import: upload, map fields, review" width="1800" height="1125" loading="lazy" decoding="async"></div>
+
 </section>
-<section>
-<div class="section-header"><span class="section-eyebrow">Craft Decisions</span>
+<section id="how-i-worked">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">How I Worked</span>
+<h2>A Developer Who Had Never Had a Designer.</h2></div>
+<div class="content-block rv" data-delay="0"><h3>The Team</h3><p>I led design for several products on the Platform team. Data Import was the one I worked on hands-on, with a researcher, two junior designers who came out of an HCI program, and one developer. One designer helped me code the interactive prototype, and the two of us worked on making it more playful. The other gave critique and feedback. I had them take the work and push it to the next level.</p></div>
+<div class="content-block rv" data-delay="90"><h3>Why We Took It On</h3><p>On the Platform team we looked for the largest issues we could solve. Import was one of the top five on Salesforce's Idea Exchange, and one of the company's goals that year was fewer issues in customer feedback. So we went after it.</p></div>
+<div class="content-block rv" data-delay="180"><h3>Working With the Developer</h3><p>The developer had never worked with a designer, and he didn't want to. He was a very good developer. I told him about my background at Microsoft, where I had mostly worked with developers who didn't work with designers, and I showed him what I wanted to build. We talked in code, in scalability, and in words he understood. I gave him a clickable prototype and the files. We met one on one, and the whole team met every two weeks for a short demo. When he told me we needed to handle cases as well as contacts and leads, I asked why, and I built it in.</p></div>
+<div class="content-block rv" data-delay="270"><h3>The Conflict: Power Users</h3><p>The PM needed the wizard to connect to the rest of the data stack and give people with a lot of data more options, because it replaced a small tool and a very large bulk updater. My clean interface had no room for that. I used progressive disclosure: an advanced section for the extra options, so the main path stayed simple.</p><p>I handed the work off before the release. It shipped, and my designs showed up in the pattern library Salesforce published a year or two later.</p></div>
+</section>
+<section id="craft">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">Craft Decisions</span>
 <h2>Six Moves That Mattered</h2></div>
-<div class="content-block">
+<div class="content-block rv" data-delay="0">
 <h3>1. One Product, Not Two</h3>
-<p>The batch size was set to handle 80% of users in the standard flow, with bulk available for the rest. That served both audiences without splitting into two products.</p>
+<p>A standard flow for 80% of users, with bulk available for the rest. One wizard for both audiences.</p>
 </div>
-<div class="content-block">
+<div class="content-block rv" data-delay="90">
 <h3>2. Preview and Clean Before Commit</h3>
-<p>A preview and cleaning step before the commit eliminated years of dirty data entering production systems.</p>
+<p>A preview and clean-up step before the commit stopped years of dirty data from reaching production.</p>
 </div>
-<div class="content-block">
+<div class="content-block rv" data-delay="180">
 <h3>3. One Place to Start</h3>
-<p>One location, one name, one entry point. The thing admins could never find became the thing they could not miss.</p>
+<p>One location, one name, one entry point. Admins could never find it. Now they can't miss it.</p>
 </div>
-<div class="content-block">
+<div class="content-block rv" data-delay="270">
 <h3>4. Plain Language, Written With a Copywriter</h3>
-<p>Every step had to be understood, not just seen, so the copy was written with a copywriter instead of left to the interface.</p>
+<p>Every step had to be understood, not just seen, so we wrote the words with a copywriter.</p>
 </div>
-<div class="content-block">
-<h3>5. I Coded Part of the Prototype Myself</h3>
-<p>I built part of the prototype in code to validate the interaction model before engineering built it. It is the same reason this page has a working demo.</p>
+<div class="content-block rv" data-delay="360">
+<h3>5. I Coded Part of the Prototype</h3>
+<p>I built part of the prototype in code, with one of the junior designers, to test the interaction before engineering built it. It's the same reason this page has a working prototype.</p>
 </div>
-<div class="content-block">
+<div class="content-block rv" data-delay="360">
 <h3>6. Progress That Talks Back</h3>
-<p>The progress bar did more than count. Choose data, edit mapping, start import, with small encouragements along the way: Let's do this, Good job, Getting closer, Almost done, Great job. Import is a task people dread, so the interface cheers them on.</p>
+<p>The progress bar did more than count. Choose data, edit mapping, start import, with small cheers along the way: Let's do this. Good job. Almost done. Nobody likes imports, so the interface cheers you on.</p>
 </div>
-<div class="image-container real"><img src="assets/images/diw-stepper.webp" alt="Early concept of the import progress bar with encouraging messages: Let's do this, Good job, Getting closer, Almost done, Great job" width="1800" height="1125" loading="lazy" decoding="async"></div>
+
 </section>
-<section>
-<div class="section-header"><span class="section-eyebrow">Impact &amp; Outcome</span>
+<section id="results">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">Results</span>
 <h2>What It Added Up To</h2></div>
-<div class="content-block">
+<div class="content-block rv" data-delay="0">
 <p>The prototype passed usability testing with seven representative user roles, and Salesforce piloted the wizard in 2013. Five tools became one trusted, elegant wizard, released to every Salesforce customer in 2014, and dirty data imports dropped dramatically across the platform. Then it spread: competitors copied the exact flow, a category of venture-funded CSV-import startups now sells this interaction to other software companies (OneSchema raised a $6.3M seed in 2022, Flatfile a $7.6M seed in 2020), and it is still regarded as the standard for CRM data import UX.</p>
 </div>
-<div class="image-container real"><img src="assets/images/diw-success.webp" alt="Import complete: 3,829 records imported, 18 skipped, 0 errors" width="1800" height="1125" loading="lazy" decoding="async"></div>
-<div class="callout"><p>Design systems so elegant that users forget they are systems.</p><div class="attribution">The principle behind the work</div></div>
+
+<div class="callout"><div class="attribution">The principle behind the work</div></div>
+<div class="content-block rv" data-delay="90"><h3>What Changed for Admins</h3><p>It solved one of the five largest issues on Salesforce's Idea Exchange, about three months from the start of design to delivery. Because the wizard works in batches, you finish your part in minutes. The system does the rest in the background and notifies you when it's done. Before, your computer was tied up. There were fewer clicks, and large imports were much faster.</p></div>
 <p class="cs-sources">Sources: <a href="https://developer.salesforce.com/blogs/2013/06/new-data-import-wizard-now-in-pilot" target="_blank" rel="noopener">Salesforce Developer Blog, June 2013 (pilot)</a> &middot; <a href="https://www.slideshare.net/slideshow/salesforce-spring-14-release-developer-overview/31309446" target="_blank" rel="noopener">Salesforce Spring ’14 release overview (general availability)</a> &middot; <a href="https://www.oneschema.co/blog/oneschema-announces-6m-fundraise" target="_blank" rel="noopener">OneSchema seed</a> &middot; <a href="https://www.builtincolorado.com/2020/06/10/flatfile-raises-7m-seed-funding" target="_blank" rel="noopener">Flatfile seed</a></p>
 </section>
-<section>
-<div class="section-header"><span class="section-eyebrow">Try It</span>
+<section id="ai">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">Then and Now</span>
+<h2>Revisiting It With AI.</h2></div>
+<div class="content-block rv" data-delay="0"><p>Field mapping and schema reconciliation were classic sources of user anxiety. I recently revisited the problem: what if AI could handle the messy parts of data onboarding while keeping people in control?</p><p>I built a concept that explores that idea, focusing on trust, clear guardrails, and giving users options when AI isn't enough. The goal is to make complex enterprise workflows feel simple without hiding what's happening behind the scenes.</p><p>Heavy enterprise data doesn't have to mean clunky enterprise UX. AI interfaces don't need to be wordy, confusing chat walls. Good information architecture still wins every single time.</p></div>
+<ul class="guardrails rv" data-delay="90"><li>Nothing is saved until you approve</li><li>Every change can be undone</li><li>Try 5 people first</li></ul>
+<figure class="cs-figure rv" data-delay="180"><img src="assets/images/diw-ai.webp" alt="The AI-forward concept: each spreadsheet row shown as the record it will become in Salesforce" loading="lazy"/><figcaption>The AI-forward concept: each row of your spreadsheet, shown as the record it will become. An independent concept, not affiliated with Salesforce.</figcaption></figure>
+</section>
+<section id="try">
+<div class="section-header rv" data-delay="0"><span class="section-eyebrow">Try It</span>
 <h2>Use the Real Thing.</h2></div>
-<p class="section-intro">The full import, from upload to success. This is the redesigned interaction model, rebuilt so you can click through it.</p>
-<div class="try-frame"><div class="try-bar"><span></span><span></span><span></span><em>isaakhayes.github.io/data-import-wizard</em><a href="https://isaakhayes.github.io/data-import-wizard/" target="_blank" rel="noopener">Open full screen &#8599;</a></div><iframe src="https://isaakhayes.github.io/data-import-wizard/" title="Data Import Wizard interactive demo" loading="lazy" style="height:680px"></iframe></div></section>
-<section class="cta-section"><h3>Let's talk.</h3><p style="margin-bottom:1.5rem;color:rgba(248,247,244,.78);max-width:520px;margin-left:auto;margin-right:auto">I'm open to product design leadership roles. If this is the kind of thinking you need, I'd like to hear about it. Hiring? Put the role in the subject line. Selling a service? I'm not buying.</p><a href="#" class="cta-button" data-mail>Email about a role</a><a href="index.html#work" class="cta-button secondary">More work</a></section>
+<p class="section-intro">Two versions in one prototype: the shipped design, rebuilt so you can click through it, and the AI-forward concept. Switch between them with the tabs at the top.</p>
+<a class="cta-button try-phone" href="https://isaakhayes.github.io/data-import-wizard/" target="_blank" rel="noopener">Open the prototype &#8599;</a>
+<div class="try-frame rv" data-delay="0"><div class="try-bar"><span></span><span></span><span></span><em>isaakhayes.github.io/data-import-wizard</em><a href="https://isaakhayes.github.io/data-import-wizard/" target="_blank" rel="noopener">Open full screen &#8599;</a></div><iframe src="https://isaakhayes.github.io/data-import-wizard/" title="Data Import Wizard interactive demo" loading="lazy" style="height:680px"></iframe></div></section>
+<section id="ask"><div class="section-header rv" data-delay="0"><span class="section-eyebrow">Ask Me About</span><h2>If We Talk, Start Here.</h2></div>
+<ul class="ask rv" data-delay="90"><li>Working with a developer who had never worked with a designer.</li><li>The PM who needed options for people with a lot of data, and how I handled it.</li><li>Why the progress bar cheers you on.</li><li>How I'd redesign it today with AI.</li></ul></section>
+<section class="cta-section"><div class="isaak-foot" aria-hidden="true"><svg viewBox="0 0 200 214" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated portrait of Isaak">
+  <defs>
+    <clipPath id="isaakClip"><circle cx="100" cy="110" r="96"/></clipPath>
+    <radialGradient id="isaakBg" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#2d3d68"/><stop offset="1" stop-color="#0f1729"/></radialGradient>
+    <linearGradient id="isaakSkin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b573a"/><stop offset="1" stop-color="#6c3f28"/></linearGradient>
+    <linearGradient id="isaakSuit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4603a"/><stop offset="1" stop-color="#7e3a1d"/></linearGradient>
+    <radialGradient id="isaakGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff4e6" stop-opacity=".95"/><stop offset=".45" stop-color="#f0a283" stop-opacity=".55"/><stop offset="1" stop-color="#f0a283" stop-opacity="0"/></radialGradient>
+    <radialGradient id="isaakCore" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ffd9b8"/></radialGradient>
+  </defs>
+  <circle cx="100" cy="110" r="98" fill="url(#isaakBg)" stroke="#c4603a" stroke-width="3.5"/>
+  <g clip-path="url(#isaakClip)">
+    <path d="M76 138 L72 172 Q100 188 128 172 L124 138 Z" fill="#6a3d27"/>
+    <path d="M6 226 C8 186 36 166 72 158 L100 176 L128 158 C164 166 192 186 194 226 Z" fill="url(#isaakSuit)"/>
+    <path d="M22 206 C34 186 52 172 72 163 M178 206 C166 186 148 172 128 163" fill="none" stroke="#f1c27a" stroke-width="2.4" stroke-linecap="round" opacity=".9"/>
+    <path d="M72 158 L100 176 L128 158" fill="none" stroke="#f1c27a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <g class="isaak-reactor">
+      <circle cx="100" cy="191" r="18" fill="url(#isaakGlow)"/>
+      <circle cx="100" cy="191" r="10.5" fill="#2a1710" stroke="#f1c27a" stroke-width="2.8"/>
+      <circle cx="100" cy="191" r="6.2" fill="url(#isaakCore)"/>
+      <path d="M100 182.4 V184.6 M107.6 195.4 L105.7 194.3 M92.4 195.4 L94.3 194.3" stroke="#fff4e6" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g class="isaak-head">
+    <ellipse cx="63" cy="94" rx="5" ry="10.5" fill="#734529"/>
+    <ellipse cx="137" cy="94" rx="5" ry="10.5" fill="#734529"/>
+    <path d="M63 88 C63 62 79 37 100 37 C121 37 137 62 137 88 C137 118 125 146 100 151 C75 146 63 118 63 88 Z" fill="url(#isaakSkin)"/>
+    <ellipse cx="90" cy="52" rx="15" ry="7" fill="#fff" opacity=".17" transform="rotate(-18 90 52)"/>
+    
+    <path fill-rule="evenodd" fill="#1b1411" d="M63 94 C63 124 77 148 100 152 C123 148 137 124 137 94 L133 100 C128 108 118 112 100 112 C82 112 72 108 67 100 Z M84 121 C90 119 96 120 100 120 C104 120 110 119 116 121 C118 130 112 139 100 141 C88 139 82 130 84 121 Z"/>
+    <path d="M67 100 C70 110 78 116 86 114 C92 110 98 111 100 112 C102 111 108 110 114 114 C122 116 130 110 133 100 L133 106 C130 118 120 122 112 120 C106 118 103 117 100 117 C97 117 94 118 88 120 C80 122 70 118 67 106 Z" fill="#1b1411"/>
+    <path class="isaak-mouth" d="M90 126 Q100 131.5 110 126 Q100 122.5 90 126 Z" fill="#a0603f"/>
+    <path d="M97 94 Q95 106 100 108 Q105 106 103 94" fill="none" stroke="#3d2113" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
+    <path d="M63 73 Q78 66 93 72 M107 72 Q122 66 137 73" fill="none" stroke="#1b1411" stroke-width="4.6" stroke-linecap="round"/>
+    <g class="isaak-eyes">
+      <ellipse cx="78" cy="88" rx="7" ry="4.6" fill="#f4efe6"/><circle cx="79" cy="88" r="3.4" fill="#1b1411"/><circle cx="80.2" cy="86.8" r="1.1" fill="#fff"/>
+      <ellipse cx="122" cy="88" rx="7" ry="4.6" fill="#f4efe6"/><circle cx="121" cy="88" r="3.4" fill="#1b1411"/><circle cx="122.2" cy="86.8" r="1.1" fill="#fff"/>
+    </g>
+    <rect x="60" y="76" width="36" height="24" rx="9" fill="#9bb8ff" fill-opacity=".12" stroke="#15110f" stroke-width="4.5"/>
+    <rect x="104" y="76" width="36" height="24" rx="9" fill="#9bb8ff" fill-opacity=".12" stroke="#15110f" stroke-width="4.5"/>
+    <path d="M96 86 Q100 83 104 86 M60 84 L52 87 M140 84 L148 87" fill="none" stroke="#15110f" stroke-width="4" stroke-linecap="round"/>
+    <path class="isaak-glint" d="M68 79 L73 79 L67 97 L62 97 Z M112 79 L117 79 L111 97 L106 97 Z" fill="#fff"/>
+  </g>
+  <path class="isaak-star s1" d="M20 44 l2.4 6.6 6.6 2.4 -6.6 2.4 -2.4 6.6 -2.4 -6.6 -6.6 -2.4 6.6 -2.4z" fill="#f1c27a"/>
+  <path class="isaak-star s2" d="M184 70 l1.8 5 5 1.8 -5 1.8 -1.8 5 -1.8 -5 -5 -1.8 5 -1.8z" fill="#f1c27a"/>
+</svg></div><h3>Let's talk.</h3><p style="margin-bottom:1.5rem;color:rgba(248,247,244,.78);max-width:520px;margin-left:auto;margin-right:auto">I'm open to product design leadership roles. If this is the kind of thinking you need, I'd like to hear about it. Hiring? Put the role in the subject line. Selling a service? I'm not buying.</p><a href="#" class="cta-button" data-mail>Email about a role</a><a href="index.html#work" class="cta-button secondary">More work</a></section>
 </div>
 <footer><p>Isaak Hayes / Product Design Leader / 20 Years / <a href="index.html">Portfolio</a></p></footer>
 <script>
@@ -641,5 +721,5 @@
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-mail]');if(a){e.preventDefault();window.location.href=link()}});
 })();
 </script>
-</body>
+<script>(function(){var els=[].slice.call(document.querySelectorAll('.rv'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var e=en.target,d=parseInt(e.getAttribute('data-delay')||0,10);setTimeout(function(){e.classList.add('visible')},d);io.unobserve(e)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})})();</script></body>
 </html>
